@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.EntityFrameworkCore;
@@ -15,100 +16,81 @@ namespace WebApiAdvanceExample.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly WebApiAdvanceExampleDbContext _context;
-
-        public ProductsController(WebApiAdvanceExampleDbContext  context)
+        private readonly IMapper _mapper;
+        public ProductsController(WebApiAdvanceExampleDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<ActionResult<List<GetProductDto>>> GetAllProducts()
         {
             List<Product> products = await _context.Products
                 .AsNoTracking()
                 .ToListAsync();
 
-            return Ok(products);
+            return Ok(_mapper.Map<List<GetProductDto>>(products));
         }
 
-        [HttpGet("{code:int}")]
-        public async Task<IActionResult> GetProductById(int code)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetProductDto>> GetProductById(Guid id)
         {
-            Product? product = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Code == code);
+            Product? product = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
             {
-                return NotFound($"{code} - nömrəli product yoxdu!");
+                return NotFound($"{id} - nömrəli product yoxdu!");
             }
 
-            return Ok(product);
+            return Ok(_mapper.Map<GetProductDto>(product));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(CreateProductDto dto)
+        public async Task<ActionResult<GetProductDto>> CreateProduct(CreateProductDto dto)
         {
             var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == dto.CategoryId);
+
             if (category == null)
                 return NotFound($"Category {dto.CategoryId} tapılmadı!");
 
-            int nextCode = 1;
-            var lastProduct = await _context.Products
-                                            .OrderByDescending(p => p.Code)
-                                            .FirstOrDefaultAsync();
-
-            if (lastProduct != null)
-                nextCode = lastProduct.Code + 1;
-
-            var product = new Product
-            {
-                Id = Guid.NewGuid(),
-                Code = nextCode,
-                CategoryId = dto.CategoryId,
-                Name = dto.Name,
-                Description = dto.Description ?? string.Empty,
-                Price = dto.Price,
-                DiscountPrice = dto.DiscountPrice ?? 0,
-                Status = dto.Status ?? ProductStatus.Inactive,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
-            };
-
+            Product product = _mapper.Map<Product>(dto);
+           
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
 
-            return StatusCode((int)HttpStatusCode.Created, product);
+            var result = _mapper.Map<GetProductDto>(product);
+
+            return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, result);
         }
 
-        [HttpPut("{code:int}")]
-        public async Task<IActionResult> UpdateProduct(int code, UpdateProductDto dto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(Guid id, UpdateProductDto dto)
         {
-            Product? product = await _context.Products.FirstOrDefaultAsync(p => p.Code == code);
-            if(product == null)
+            Product? product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product == null)
             {
-                return NotFound($"{code} - nömrəli product yoxdu!");
+                return NotFound($"{id} - nömrəli product yoxdu!");
             }
 
-            product.Name = dto.Name;
-            product.Description = dto.Description ?? product.Description;
-            product.Price = dto.Price;
-            product.DiscountPrice = dto.DiscountPrice ?? product.DiscountPrice;
-            product.Status = dto.Status ?? product.Status;
+            _mapper.Map(dto, product);
 
             await _context.SaveChangesAsync();
-            return Ok(product);
+            return NoContent();
         }
 
-        [HttpDelete("{code:int}")]
-        public async Task<IActionResult> DeleteProduct(int code)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            Product? product = await _context.Products.FirstOrDefaultAsync(p => p.Code == code);
+            Product? product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
             {
-                return NotFound($"{code} - nömrəli product yoxdu!");
+                return NotFound($"{id} - nömrəli product yoxdu!");
             }
 
             _context.Products.Remove(product);
+
             await _context.SaveChangesAsync();
 
             return NoContent();

@@ -215,4 +215,6 @@ C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Project
 C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\obj\Debug\net10.0\WebApiAdvanceExample.pdb
 C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\obj\Debug\net10.0\WebApiAdvanceExample.genruntimeconfig.cache
 C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\obj\Debug\net10.0\ref\WebApiAdvanceExample.dll
+C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\geniu\Desktop\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\WebApiAdvanceExampleSolution\WebApiAdvanceExample\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

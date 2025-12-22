@@ -12,7 +12,7 @@ using WebApiAdvanceExample.DAL.EFCore;
 namespace WebApiAdvanceExample.DAL.Migrations
 {
     [DbContext(typeof(WebApiAdvanceExampleDbContext))]
-    [Migration("20251220101705_mig_1")]
+    [Migration("20251222200622_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -30,9 +30,6 @@ namespace WebApiAdvanceExample.DAL.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -66,9 +63,6 @@ namespace WebApiAdvanceExample.DAL.Migrations
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

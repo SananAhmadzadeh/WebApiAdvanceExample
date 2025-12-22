@@ -13,19 +13,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "WebApiAdvanceExample.Entities.DTOs.CategoryDTOs.GetCategoryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
     "Method": "DeleteCategory",
-    "RelativePath": "api/Categories/DeleteCategory/{code}",
+    "RelativePath": "api/Categories/DeleteCategory/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -39,35 +49,55 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApiAdvanceExample.Entities.DTOs.CategoryDTOs.GetCategoryDto, WebApiAdvanceExample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
     "Method": "GetCategoryById",
-    "RelativePath": "api/Categories/GetCategoryById/{code}",
+    "RelativePath": "api/Categories/GetCategoryById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "WebApiAdvanceExample.Entities.DTOs.CategoryDTOs.GetCategoryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
     "Method": "UpdateCategory",
-    "RelativePath": "api/Categories/UpdateCategory/{code}",
+    "RelativePath": "api/Categories/UpdateCategory/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
@@ -92,19 +122,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "WebApiAdvanceExample.Entities.DTOs.ProductDTOs.GetProductDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.ProductsController",
     "Method": "DeleteProduct",
-    "RelativePath": "api/Products/DeleteProduct/{code}",
+    "RelativePath": "api/Products/DeleteProduct/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -118,35 +158,55 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApiAdvanceExample.Entities.DTOs.ProductDTOs.GetProductDto, WebApiAdvanceExample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.ProductsController",
     "Method": "GetProductById",
-    "RelativePath": "api/Products/GetProductById/{code}",
+    "RelativePath": "api/Products/GetProductById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "WebApiAdvanceExample.Entities.DTOs.ProductDTOs.GetProductDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.ProductsController",
     "Method": "UpdateProduct",
-    "RelativePath": "api/Products/UpdateProduct/{code}",
+    "RelativePath": "api/Products/UpdateProduct/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.Int32",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {

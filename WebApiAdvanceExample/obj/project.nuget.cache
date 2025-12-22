@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a1Bh4y1/bqI=",
+  "dgSpecHash": "1Pty3X6OQxo=",
   "success": true,
   "projectFilePath": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\WebApiAdvanceExample.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\geniu\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\geniu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\geniu\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\geniu\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\geniu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

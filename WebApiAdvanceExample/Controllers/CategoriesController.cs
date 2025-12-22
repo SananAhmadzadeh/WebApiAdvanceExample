@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -14,87 +15,69 @@ namespace WebApiAdvanceExample.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly WebApiAdvanceExampleDbContext _context;
-        public CategoriesController(WebApiAdvanceExampleDbContext context)
+        private readonly IMapper _mapper;
+        public CategoriesController(WebApiAdvanceExampleDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCategories()
+        public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategories()
         {
-            List<Category> categories = await _context.Categories
-                .AsNoTracking()
-                .ToListAsync();
-
-            return Ok(categories);
+            var categories = await _context.Categories.AsNoTracking().ToListAsync();
+            return Ok(_mapper.Map<List<GetCategoryDto>>(categories));
         }
 
-        [HttpGet("{code:int}")]
-        public async Task<IActionResult> GetCategoryById(int code)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetCategoryDto>> GetCategoryById(Guid id)
         {
-            Category? category = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Code == code);
-            if (category == null)
-                return NotFound($"{code} - nömrəli kateqoriya yoxdu!");
+            var category = await _context.Categories.AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == id);
 
-            return Ok(category);
+            if (category == null)
+                return NotFound($"{id} - nömrəli kateqoriya tapılmadı!");
+
+            return Ok(_mapper.Map<GetCategoryDto>(category));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateCategoryDto dto)
+        public async Task<ActionResult<GetCategoryDto>> CreateCategory(CreateCategoryDto dto)
         {
-            int nextCode = 1;
+            var category = _mapper.Map<Category>(dto);
 
-            var lastCategory = await _context.Categories
-                                             .OrderByDescending(c => c.Code)
-                                             .FirstOrDefaultAsync();
-
-            if (lastCategory != null)
-                nextCode = lastCategory.Code + 1;
-
-            var category = new Category
-            {
-                Id = Guid.NewGuid(),
-                Code = nextCode,
-                Name = dto.Name,
-                Description = dto.Description ?? string.Empty,
-                Status = dto.Status ?? CategoryStatus.Active,
-                Products = new List<Product>(),
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
-            };
-
-            _context.Categories.Add(category);
+            await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
 
-            return StatusCode((int)HttpStatusCode.Created, category);
+            var result = _mapper.Map<GetCategoryDto>(category);
+
+            return CreatedAtAction(nameof(GetCategoryById), new { id = category.Id }, result);
         }
 
-        [HttpPut("{code:int}")]
-        public async Task<IActionResult> UpdateCategory(int code, UpdateCategoryDto dto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCategory(Guid id, UpdateCategoryDto dto)
         {
-            Category? updatedCategory = await _context.Categories.FirstOrDefaultAsync(c => c.Code == code);
-            if (updatedCategory == null)
-                return NotFound($"{code} - nömrəli kateqoriya yoxdu!");
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
 
-            updatedCategory.Name = dto.Name;
-            updatedCategory.Description = dto.Description ?? updatedCategory.Description;
-            updatedCategory.Status = dto.Status ?? updatedCategory.Status;
-            updatedCategory.UpdatedAt = DateTime.UtcNow;
+            if (category == null)
+                return NotFound($"{id} - nömrəli kateqoriya tapılmadı!");
+
+            _mapper.Map(dto, category);
 
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        [HttpDelete("{code:int}")]
-        public async Task<IActionResult> DeleteCategory(int code)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            Category? deletedCategory = await _context.Categories.FirstOrDefaultAsync(c => c.Code == code);
-            if (deletedCategory == null)
-                return NotFound($"{code} - nömrəli kateqoriya yoxdu!");
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
 
-            _context.Categories.Remove(deletedCategory);
+            if (category == null)
+                return NotFound($"{id} - nömrəli kateqoriya yoxdu!");
 
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
 
             return NoContent();

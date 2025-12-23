@@ -25,14 +25,18 @@ namespace WebApiAdvanceExample.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategories()
         {
-            var categories = await _context.Categories.AsNoTracking().ToListAsync();
+            var categories = await _context.Categories
+                .AsNoTracking()
+                .ToListAsync();
+
             return Ok(_mapper.Map<List<GetCategoryDto>>(categories));
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<GetCategoryDto>> GetCategoryById(Guid id)
         {
-            var category = await _context.Categories.AsNoTracking()
+            var category = await _context.Categories
+                .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (category == null)
@@ -51,7 +55,7 @@ namespace WebApiAdvanceExample.Controllers
 
             var result = _mapper.Map<GetCategoryDto>(category);
 
-            return CreatedAtAction(nameof(GetCategoryById), new { id = category.Id }, result);
+            return CreatedAtAction(nameof(GetCategoryById) , new { id = category.Id }, result);
         }
 
         [HttpPut("{id}")]

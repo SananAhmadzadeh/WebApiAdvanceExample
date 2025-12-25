@@ -17,5 +17,6 @@ namespace WebApiAdvanceExample.Entities
         public decimal? DiscountPrice { get; set; }
         public string Currency { get; set; } = "AZN";
         public ProductStatus Status { get; set; }
+        public List<OrderItem> OrderItems { get; set; } 
     }
 }

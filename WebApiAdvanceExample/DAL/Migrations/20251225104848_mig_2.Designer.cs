@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApiAdvanceExample.DAL.EFCore;
 
@@ -11,9 +12,11 @@ using WebApiAdvanceExample.DAL.EFCore;
 namespace WebApiAdvanceExample.DAL.Migrations
 {
     [DbContext(typeof(WebApiAdvanceExampleDbContext))]
-    partial class WebApiAdvanceExampleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251225104848_mig_2")]
+    partial class mig_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +75,7 @@ namespace WebApiAdvanceExample.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("WebApiAdvanceExample.Entities.OrderItem", b =>
@@ -109,7 +112,7 @@ namespace WebApiAdvanceExample.DAL.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("WebApiAdvanceExample.Entities.Product", b =>

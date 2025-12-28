@@ -1,9 +1,11 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using WebApiAdvanceExample.DAL.EFCore;
+using WebApiAdvanceExample.Entities.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,10 @@ builder.Services.AddFluentValidationAutoValidation()
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddIdentity<AppUser<Guid>, IdentityRole>()
+    .AddEntityFrameworkStores<WebApiAdvanceExampleDbContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

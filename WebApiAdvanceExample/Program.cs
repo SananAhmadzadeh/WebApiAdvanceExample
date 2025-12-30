@@ -1,8 +1,9 @@
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using WebApiAdvanceExample.DAL.EFCore;
 using WebApiAdvanceExample.Entities.Auth;
@@ -25,7 +26,29 @@ builder.Services.AddIdentity<AppUser<Guid>, IdentityRole>()
     .AddEntityFrameworkStores<WebApiAdvanceExampleDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddAuthentication(opt=>
+{
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(opt=>
+{
+    var tokenOption = builder.Configuration.GetSection("TokenOptions").Get<TokenOption>();
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidIssuer = tokenOption.Issuer,
+        ValidAudience = tokenOption.Audience,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(tokenOption.SecurityKey)),
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -42,8 +65,12 @@ app.MapGet("/", context =>
     return Task.CompletedTask;
 });
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+
+

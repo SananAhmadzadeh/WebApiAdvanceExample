@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\visual studio 2026 - asp.net core web applactions projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\visual studio 2026 - asp.net core web applactions projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Program.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
-              "RelativeToolTip": "WebApiAdvanceExample\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAKAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
+              "RelativeToolTip": "WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAgwBwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T09:57:05.908Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-12-30T09:33:29.361Z",
               "EditorCaption": ""
             },
             {

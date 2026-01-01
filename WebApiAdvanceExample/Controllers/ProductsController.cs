@@ -12,6 +12,7 @@ using WebApiAdvanceExample.Entities.Enums;
 
 namespace WebApiAdvanceExample.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -23,8 +24,6 @@ namespace WebApiAdvanceExample.Controllers
             _context = context;
             _mapper = mapper;
         }
-
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<GetProductDto>>> GetAllProducts()
         {

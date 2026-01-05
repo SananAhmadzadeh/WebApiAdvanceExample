@@ -4471,11 +4471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\WebApiAdvanceExample.csproj",
+      "projectUniqueName": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\WebApiAdvanceExample.csproj",
       "projectName": "WebApiAdvanceExample",
-      "projectPath": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\WebApiAdvanceExample.csproj",
+      "projectPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\WebApiAdvanceExample.csproj",
       "packagesPath": "C:\\Users\\geniu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\geniu\\Desktop\\Visual Studio 2026 - ASP.NET CORE WEB APPLACTIONS Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\obj\\",
+      "outputPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

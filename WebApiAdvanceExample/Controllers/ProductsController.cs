@@ -12,7 +12,6 @@ using WebApiAdvanceExample.Entities.Enums;
 
 namespace WebApiAdvanceExample.Controllers
 {
-    [Authorize(Roles = "Admin")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductsController : ControllerBase

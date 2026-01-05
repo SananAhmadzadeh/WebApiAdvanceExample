@@ -31,22 +31,22 @@ namespace WebApiAdvanceExample.Controllers.Auth
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto register)
         {
-            var admin = _mapper.Map<AppUser<Guid>>(register);
+            var user = _mapper.Map<AppUser<Guid>>(register);
 
-            var resultAdmin = await _userManager.CreateAsync(admin, register.Password);
+            var resultUser = await _userManager.CreateAsync(user, register.Password);
 
-            if (!resultAdmin.Succeeded)
+            if (!resultUser.Succeeded)
             {
                 return BadRequest(new
                 {
-                    errors = resultAdmin.Errors,
+                    errors = resultUser.Errors,
                     Code = StatusCodes.Status400BadRequest
                 });
             }
 
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            await _roleManager.CreateAsync(new IdentityRole("User"));
 
-            var resultRole = await _userManager.AddToRoleAsync(admin, "Admin");
+            var resultRole = await _userManager.AddToRoleAsync(user, "User");
 
             if (!resultRole.Succeeded)
             {

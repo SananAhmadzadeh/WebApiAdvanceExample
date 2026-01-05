@@ -75,8 +75,28 @@
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
-    "Method": "GetAllCategories",
+    "Method": "GetAllCategoriesAsync",
     "RelativePath": "api/Categories/GetAllCategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApiAdvanceExample.Entities.DTOs.CategoryDTOs.GetCategoryDto, WebApiAdvanceExample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
+    "Method": "GetAllCategoriesPaginatedAsync",
+    "RelativePath": "api/Categories/GetAllCategoriesPaginated",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using WebApiAdvanceExample.DAL.EFCore;
+using WebApiAdvanceExample.DAL.Repositories.Abstract;
+using WebApiAdvanceExample.DAL.Repositories.Concrete.EfCore;
 using WebApiAdvanceExample.Entities.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,7 @@ builder.Services.AddFluentValidationAutoValidation()
 
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddIdentity<AppUser<Guid>, IdentityRole>()
     .AddEntityFrameworkStores<WebApiAdvanceExampleDbContext>()
@@ -48,6 +50,8 @@ builder.Services.AddAuthentication(opt=>
 });
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddScoped<ICategoryRepository, EfCategoryRepository>();
 
 builder.Services.AddSwaggerGen();
 

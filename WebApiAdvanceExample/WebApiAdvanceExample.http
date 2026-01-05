@@ -1,3 +1,0 @@
-@WebApiAdvanceExample_HostAddress = http://localhost:5203
-
-GET http://localhost:5203/api/products

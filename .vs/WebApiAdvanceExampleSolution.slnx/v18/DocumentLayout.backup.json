@@ -14,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
+              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Program.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs*",
+              "RelativeToolTip": "WebApiAdvanceExample\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T12:22:55.008Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -27,19 +40,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Program.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs*",
-              "RelativeToolTip": "WebApiAdvanceExample\\Program.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T20:09:48.608Z",
-              "EditorCaption": ""
             }
           ]
         },

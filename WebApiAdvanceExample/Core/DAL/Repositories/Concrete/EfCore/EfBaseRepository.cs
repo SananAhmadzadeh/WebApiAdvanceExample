@@ -60,10 +60,6 @@ namespace WebApiAdvanceExample.Core.DAL.Repositories.Concrete.EfCore
             return await query.FirstOrDefaultAsync(filter);
         }
 
-        public async Task SaveAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
 
         private IQueryable<TEntity> CreateQuery(bool tracking, params Expression<Func<TEntity, object>>[] includes)
         {

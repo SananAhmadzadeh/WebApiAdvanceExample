@@ -10,6 +10,5 @@ namespace WebApiAdvanceExample.Core.DAL.Repositories.Abstract
         Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> filter, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
         Task AddAsync(TEntity entity);
         Task DeleteAsync(Guid id);
-        Task SaveAsync();
     }
 }

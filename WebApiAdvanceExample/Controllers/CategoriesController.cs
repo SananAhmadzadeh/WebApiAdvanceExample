@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApiAdvanceExample.DAL.EFCore;
-using WebApiAdvanceExample.DAL.Repositories.Abstract;
+using WebApiAdvanceExample.DAL.UnitOfWork.Abstract;
 using WebApiAdvanceExample.Entities;
 using WebApiAdvanceExample.Entities.DTOs.CategoryDTOs;
 
@@ -12,26 +12,26 @@ namespace WebApiAdvanceExample.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CategoriesController(IMapper mapper, ICategoryRepository categoryRepository)
+        public CategoriesController(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
-            _categoryRepository = categoryRepository;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategoriesAsync()
+        public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategories()
         {
-            var categories = await _categoryRepository.GetAllAsync();
+            var categories = await _unitOfWork.CategoryRepository.GetAllAsync();
 
             return Ok(_mapper.Map<List<GetCategoryDto>>(categories));
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategoriesPaginatedAsync()
+        public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategoriesPaginated()
         {
-            var categories = await _categoryRepository.GetPaginatedAsync();
+            var categories = await _unitOfWork.CategoryRepository.GetPaginatedAsync();
 
             return Ok(_mapper.Map<List<GetCategoryDto>>(categories));
         }
@@ -39,7 +39,7 @@ namespace WebApiAdvanceExample.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<GetCategoryDto>> GetCategoryById(Guid id)
         {
-            var category = await _categoryRepository.GetAsync(c => c.Id == id);
+            var category = await _unitOfWork.CategoryRepository.GetAsync(c => c.Id == id);
 
             if (category == null)
                 return NotFound($"{id} - nömrəli kateqoriya tapılmadı!");
@@ -52,8 +52,8 @@ namespace WebApiAdvanceExample.Controllers
         {
             var category = _mapper.Map<Category>(dto);
 
-            await _categoryRepository.AddAsync(category);
-            await _categoryRepository.SaveAsync();
+            await _unitOfWork.CategoryRepository.AddAsync(category);
+            await _unitOfWork.SaveAsync();
 
             var result = _mapper.Map<GetCategoryDto>(category);
 
@@ -63,14 +63,14 @@ namespace WebApiAdvanceExample.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(Guid id, UpdateCategoryDto dto)
         {
-            var category = await _categoryRepository.GetAsync(c => c.Id == id, tracking: true);
+            var category = await _unitOfWork.CategoryRepository.GetAsync(c => c.Id == id, tracking: true);
 
             if (category == null)
                 return NotFound($"{id} - nömrəli kateqoriya tapılmadı!");
 
             _mapper.Map(dto, category);
 
-            await _categoryRepository.SaveAsync();
+            await _unitOfWork.SaveAsync();
 
             return NoContent();
         }
@@ -78,13 +78,13 @@ namespace WebApiAdvanceExample.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            var category = await _categoryRepository.GetAsync(c => c.Id == id);
+            var category = await _unitOfWork.CategoryRepository.GetAsync(c => c.Id == id);
 
             if (category == null)
                 return NotFound($"{id} - nömrəli kateqoriya yoxdu!");
 
-            await _categoryRepository.DeleteAsync(id);
-            await _categoryRepository.SaveAsync();
+            await _unitOfWork.CategoryRepository.DeleteAsync(id);
+            await _unitOfWork.SaveAsync();
 
             return NoContent();
         }

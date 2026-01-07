@@ -44,7 +44,11 @@ namespace WebApiAdvanceExample.Controllers.Auth
                 });
             }
 
-            await _roleManager.CreateAsync(new IdentityRole("User"));
+            if (!await _roleManager.RoleExistsAsync("User"))
+            {
+                await _roleManager.CreateAsync(new IdentityRole("User"));
+            }
+
 
             var resultRole = await _userManager.AddToRoleAsync(user, "User");
 
@@ -59,7 +63,7 @@ namespace WebApiAdvanceExample.Controllers.Auth
 
             return Ok(new
             {
-                Message = "Admin registered successfully",
+                Message = "User registered successfully",
                 Code = StatusCodes.Status200OK
             });
         }

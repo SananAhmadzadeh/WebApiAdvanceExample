@@ -75,7 +75,7 @@
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
-    "Method": "GetAllCategoriesAsync",
+    "Method": "GetAllCategories",
     "RelativePath": "api/Categories/GetAllCategories",
     "HttpMethod": "GET",
     "IsController": true,
@@ -95,7 +95,7 @@
   },
   {
     "ContainingType": "WebApiAdvanceExample.Controllers.CategoriesController",
-    "Method": "GetAllCategoriesPaginatedAsync",
+    "Method": "GetAllCategoriesPaginated",
     "RelativePath": "api/Categories/GetAllCategoriesPaginated",
     "HttpMethod": "GET",
     "IsController": true,

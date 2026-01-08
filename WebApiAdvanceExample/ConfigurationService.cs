@@ -27,7 +27,7 @@ public static class ConfigurationServiceExtensions
                     .AddFluentValidationClientsideAdapters();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddIdentity<AppUser<Guid>, IdentityRole>()
                 .AddEntityFrameworkStores<WebApiAdvanceExampleDbContext>()
@@ -35,7 +35,12 @@ public static class ConfigurationServiceExtensions
 
             var tokenOption = configuration.GetSection("TokenOptions").Get<TokenOption>();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
                 .AddJwtBearer(opt =>
                 {
                     opt.TokenValidationParameters = new TokenValidationParameters
@@ -48,15 +53,13 @@ public static class ConfigurationServiceExtensions
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(
                             System.Text.Encoding.UTF8.GetBytes(tokenOption.SecurityKey)),
-                        ClockSkew = TimeSpan.Zero
+                        ClockSkew = TimeSpan.Zero,
+                        
                     };
                 });
 
-            services.AddEndpointsApiExplorer();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.AddSwaggerGen();
 
             return services;
         }

@@ -10,6 +10,7 @@ namespace WebApiAdvanceExample.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+   
     public class CategoriesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,6 +22,7 @@ namespace WebApiAdvanceExample.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="User")]
         public async Task<ActionResult<List<GetCategoryDto>>> GetAllCategories()
         {
             var categories = await _unitOfWork.CategoryRepository.GetAllAsync();

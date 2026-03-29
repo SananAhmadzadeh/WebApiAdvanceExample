@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\",
+  "WorkspaceRootPath": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\WebApiAdvanceExampleSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core exaple projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core exaple projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core exaple projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core exaple projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core exaple projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|c:\\users\\geniu\\desktop\\asp.net core example projects\\webapiadvanceexamplesolution\\webapiadvanceexample\\controllers\\redisdistributedcachingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{558521F2-3D6A-5457-A28C-7807917FA26D}|WebApiAdvanceExample\\WebApiAdvanceExample.csproj|solutionrelative:webapiadvanceexample\\controllers\\redisdistributedcachingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +14,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -42,71 +30,31 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
-              "RelativeToolTip": "WebApiAdvanceExample\\Controllers\\Auth\\AuthController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAqwH0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T11:41:00.454Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConfigurationService.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\ConfigurationService.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\ConfigurationService.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\ConfigurationService.cs*",
-              "RelativeToolTip": "WebApiAdvanceExample\\ConfigurationService.cs*",
-              "ViewState": "AgIAABoAAAAAAAAAAAAqwCkAAABLAAAAAAAAAA==",
+              "Title": "RedisDistributedCachingController.cs",
+              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\RedisDistributedCachingController.cs",
+              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Controllers\\RedisDistributedCachingController.cs",
+              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Example Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\RedisDistributedCachingController.cs*",
+              "RelativeToolTip": "WebApiAdvanceExample\\Controllers\\RedisDistributedCachingController.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvx8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T11:40:34.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Program.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Program.cs",
-              "RelativeToolTip": "WebApiAdvanceExample\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T11:40:28.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\appsettings.json",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\appsettings.json",
-              "RelativeToolTip": "WebApiAdvanceExample\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-08T11:39:37.244Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "WebApiAdvanceExample\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\geniu\\Desktop\\Asp.Net Core Exaple Projects\\WebApiAdvanceExampleSolution\\WebApiAdvanceExample\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "WebApiAdvanceExample\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBcAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T11:38:16.502Z",
+              "WhenOpened": "2026-03-29T12:16:37.775Z",
               "EditorCaption": ""
             }
           ]
@@ -117,7 +65,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }

@@ -32,6 +32,13 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 
+builder.Services.AddMemoryCache(); //in-memory caching
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "WebApiAdvanceExample_";
+}); //redis distributed caching
+
 var app = builder.Build();
 
 

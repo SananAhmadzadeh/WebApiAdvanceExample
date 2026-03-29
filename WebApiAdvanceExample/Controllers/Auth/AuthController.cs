@@ -79,6 +79,7 @@ namespace WebApiAdvanceExample.Controllers.Auth
                     Message = "User not found",
                     Code = StatusCodes.Status404NotFound
                 });
+
             bool isValidPassword = await _userManager.CheckPasswordAsync(user, login.Password);
 
             if (!isValidPassword)

@@ -161,6 +161,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApiAdvanceExample.Controllers.InMemoryCacheTestController",
+    "Method": "GetCacheValue",
+    "RelativePath": "api/InMemoryCacheTest/GetCacheValue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiAdvanceExample.Controllers.InMemoryCacheTestController",
+    "Method": "SetCacheValue",
+    "RelativePath": "api/InMemoryCacheTest/SetCacheValue",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApiAdvanceExample.Controllers.OrderItemsController",
     "Method": "CreateOrderItem",
     "RelativePath": "api/OrderItems/CreateOrderItem",
@@ -483,6 +520,37 @@
         "Name": "dto",
         "Type": "WebApiAdvanceExample.Entities.DTOs.ProductDTOs.UpdateProductDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiAdvanceExample.Controllers.RedisDistributedCachingController",
+    "Method": "Get",
+    "RelativePath": "api/RedisDistributedCaching/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiAdvanceExample.Controllers.RedisDistributedCachingController",
+    "Method": "Set",
+    "RelativePath": "api/RedisDistributedCaching/Set",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "surname",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

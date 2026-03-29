@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using WebApiAdvanceExample.Core.DAL.Repositories.Abstract;
-using WebApiAdvanceExample.DAL.EFCore;
-using WebApiAdvanceExample.Entities;
+
 
 namespace WebApiAdvanceExample.Core.DAL.Repositories.Concrete.EfCore
 {
